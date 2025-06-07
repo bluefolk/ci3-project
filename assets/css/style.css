@@ -1,0 +1,203 @@
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    background-color: #f0f0f0; /* Or a light background */
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    --bs-gutter-x: 0; /* Remove Bootstrap's default horizontal gutter */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 80px; /* Adjust width as needed */
+    background-color: #b0b28a; /* Sidebar background color */
+    height: 100vh; /* Full height */
+    position: fixed; /* Fix sidebar position */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-right: 1px solid #000; /* Add a subtle right border */
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #5a5a5a; /* Dark circle color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    margin-bottom: 30px;
+}
+
+.sidebar-item {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #000; /* Default icon color */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #c5c7ac;
+}
+
+.sidebar-item.active {
+    background-color: #000;
+}
+
+
+/* Main Content Area */
+.main-content {
+    margin-left: 80px; /* Offset by sidebar width */
+    padding: 0; /* Remove default padding */
+    background-color: #d4d5b7; /* Main content background color */
+    min-height: 100vh; /* Ensure it takes at least full height */
+}
+
+/* Header Styling */
+.header {
+    background-color: #b0b28a; /* Header background color */
+    color: #000; /* Header text color */
+    font-family: 'Old Standard TT', serif; /* Font for header */
+}
+
+.header h2 {
+    font-size: 1.5em;
+}
+
+.header p {
+    font-size: 1.1em;
+}
+
+/* DD Earmark Section */
+.dd-earmark-section {
+    color: #000; /* Text color for this section */
+    font-family: 'Merriweather', serif; /* Font */
+}
+
+.dd-earmark-section h1 {
+    font-family: 'Old Standard TT', serif; /* Title font */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.details-grid, .file-list {
+    display: grid;
+    grid-template-columns: auto auto 1fr; /* Label, separator, value/button */
+    gap: 8px 15px; /* Adjust row and column gap */
+    align-items: baseline; /* Align items to the baseline */
+}
+
+.detail-item, .file-item {
+    display: contents; /* Make children the grid items */
+}
+
+.detail-label, .file-label {
+    text-align: right;
+    white-space: nowrap; /* Prevent labels from wrapping */
+    font-weight: bold; /* Make labels bold */
+    padding-right: 5px; /* Add some padding to the right of labels */
+}
+
+.detail-separator, .file-separator {
+     text-align: center;
+}
+
+.detail-value {
+     text-align: left;
+}
+
+
+.file-list .btn {
+    background-color: #d0d0d0; /* Lighter button background color */
+    border: 1px solid #a0a0a0; /* Slightly lighter border */
+    color: #000; /* Button text color */
+    padding: 0.15rem 0.6rem; /* Adjust padding */
+    font-size: 0.85em; /* Slightly larger font */
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Add subtle shadow to buttons */
+    border-radius: 4px; /* Slightly rounded corners for file buttons */
+}
+
+/* Button Group */
+.button-group {
+    margin-top: 40px; /* Space above buttons */
+    text-align: center; /* Center the buttons */
+}
+
+.button-group .btn {
+    padding: 0.5rem 1.5rem; /* Larger padding for bottom buttons */
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Add subtle shadow */
+    border-radius: 8px; /* More rounded corners for bottom buttons */
+}
+
+.button-group .btn-danger {
+    background-color: #e76f51; /* Reddish color */
+    border-color: #e76f51;
+}
+
+.button-group .btn-success {
+     background-color: #8ac926; /* Greenish color */
+     border-color: #8ac926;
+}
+
+
+/* Rejection Modal Overlay (for appearance only) */
+/* In a real application, this would be controlled by JS */
+.rejection-modal-overlay {
+    position: absolute; /* Position over content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(248, 249, 250, 0.9); /* Slightly more opaque light background for the modal */
+    padding: 25px; /* Increase padding */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    width: 400px; /* Adjust width as needed */
+    max-width: 90%; /* Max width relative to viewport */
+    z-index: 1000; /* Ensure it's on top */
+    border: 1px solid #ccc; /* Add a border to the modal */
+}
+
+.rejection-modal-content h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+.rejection-modal-content textarea {
+    width: 100%;
+    margin-bottom: 20px; /* More space below textarea */
+    resize: none; /* Prevent resizing */
+    border: 1px solid #ccc; /* Add border to textarea */
+    padding: 10px; /* Add padding inside textarea */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.rejection-modal-content .btn-success {
+    background-color: #8ac926; /* Green color */
+    border-color: #8ac926;
+    color: white; /* White text */
+    width: 100px; /* Adjust button width */
+    font-size: 1em;
+    display: block; /* Make button a block element to center */
+    margin-left: auto; /* Center button */
+    margin-right: auto; /* Center button */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Add subtle shadow */
+    border-radius: 4px; /* Rounded corners for modal button */
+} 
